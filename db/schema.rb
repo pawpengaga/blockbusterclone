@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_01_074505) do
 
   create_table "movies", force: :cascade do |t|
     t.string "name"
-    t.bigint "client_id", null: false
+    t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_movies_on_client_id"
