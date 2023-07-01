@@ -1,4 +1,3 @@
-# PostgreSQL. Versions 9.3 and up are supported.
 #
 # Install the pg driver:
 #   gem install pg
@@ -21,6 +20,12 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+# PostgreSQL. Versions 9.3 and up are supported.
+  username: postgres
+  password: 12345678
+  host: localhost
+  port: 5432
+
 development:
   <<: *default
   database: dBlockbusterErickRivera_development
@@ -29,19 +34,15 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: dBlockbusterErickRivera
 
   # The password associated with the postgres role (username).
-  #password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
