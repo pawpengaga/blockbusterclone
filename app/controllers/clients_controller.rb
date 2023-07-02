@@ -4,15 +4,17 @@ class ClientsController < ApplicationController
   # GET /clients or /clients.json
   def index
     @clients = Client.all
+    @counter = Client.count
   end
 
   # GET /clients/1 or /clients/1.json
   def show
+    @counter = 1
   end
 
   # GET /clients/new
   def new
-    @client = Client.new
+    @clients = Client.new
   end
 
   # GET /clients/1/edit

@@ -1,6 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @movie %>
+  <div class="col-4 py-2">
+    <div class="card">
+      <div class="card-body">
+        <%= image_tag @movie.picture, class: "w-100" %>
+        <h5 class="card-title"><%= @movie.name %></h5>
+        <% if @movie.client %>
+          <p><span class="fw-bold">Arrendada por: </span><%= link_to @movie.client.name, client_path(@movie.client) %></p>
+        <% else %>
+          <p><span class="fw-bold">Estado: </span>Disponible</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
 <div>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |

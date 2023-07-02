@@ -21,6 +21,10 @@
     <%= form.select :client_id, options_for_select([nil] + @clients) %>
   </div>
   
+  <div>
+    <%= form.label :picture, "Portada de la película (URL)", style: "display: block" %>
+    <%= form.text_field :picture %>
+  </div>
 
   <div>
     <%= form.submit %>

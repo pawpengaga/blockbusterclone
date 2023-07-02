@@ -8,7 +8,7 @@
 
 
 100.times do
-    Movie.create(name: Faker::Movie.title)
+    Movie.create(name: Faker::Movie.title, picture: "https://www.mockofun.com/wp-content/uploads/2019/10/movie-poster-credits-178.jpg")
 end
   
 10.times do

@@ -3,8 +3,18 @@
     <th scope="row"><%= client.id %></th>
     <td><%= client.name %></td>
     <td><%= client.age %></td>
-    <td><%= client.movie.last %></td>
-    <td><%= link_to "Show this client", client %></td>
+    
+    <% if @counter != 1 %>
+      <% if client.movies.present? %>
+        <td><%= link_to client.movies.last.name, movie_path(client.movies.last) %></td>
+      <% else %>
+        <td>No arrienda</td>
+      <% end %>
+
+        <td><%= link_to "Show this client", client %></td>
+      <%else%>
+      <td><%= link_to client.movies.last, movie_path(client.movies.last) %></td>
+    <%end%>
     <td><%= button_to "Edit this client", edit_client_path(client) %></td>
     <td><%= link_to "Destroy this client", @client, method: :delete %></td>
   </tr>

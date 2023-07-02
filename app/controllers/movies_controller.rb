@@ -4,11 +4,12 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    @movies = Movie.all.reverse #Mostrará las pelis más reciente editadas primero
   end
 
   # GET /movies/1 or /movies/1.json
   def show
+    @movies = Movie.all
   end
 
   # GET /movies/new
@@ -61,15 +62,15 @@ class MoviesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
-      @movie = Movie.find(params[:id])
+      @movie = Movie.find(params[:id]) #Movie.includes(:client).find(params[:id])
     end
 
     def set_clients
-      @clients = Client.all.pluck :name, :id
+      @clients = Client.all.pluck(:name, :id)
     end
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:name, :client_id)
+      params.require(:movie).permit(:name, :client_id, :picture)
     end
 end

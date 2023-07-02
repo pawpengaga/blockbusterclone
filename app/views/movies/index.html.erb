@@ -6,7 +6,20 @@
   <div id="movies">
     <div class="row">
       <% @movies.each do |movie| %>
-        <%= render movie %>
+        <div class="col-4 py-2">
+          <div class="card">
+            <div class="card-body">
+              <%= image_tag movie.picture, class: "w-100" %>
+              <h5 class="card-title"><%= movie.name %></h5>
+              <% if movie.client %>
+                <p><span class="fw-bold">Arrendada por: </span><%= movie.client.name %></p>
+              <% else %>
+                <p>Disponible</p>
+              <% end %>
+              <%= link_to "Ver detalles", movie, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

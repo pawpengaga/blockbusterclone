@@ -1,26 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container">
-  <h1>Clients</h1>
+<h1>Clients</h1>
+<div id="clients">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Película arrendada</th>
+        <th scope="col" colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
 
-  <%= link_to "New client", new_client_path %>
+        <%= render @clients %>
 
-  <div id="clients">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">Movie</th>
-          <th scope="col" colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @clients.each do |client| %>
-          <%= render client %>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+    </tbody>
+  </table>
 </div>
+<%= link_to "New client", new_client_path %>

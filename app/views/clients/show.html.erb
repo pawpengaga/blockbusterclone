@@ -1,10 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @client %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Película arrendada</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render @client %>
+  </tbody>
+</table>
 
 <div>
-  <%= link_to "Edit this client", edit_client_path(@client) %> |
+
   <%= link_to "Back to clients", clients_path %>
 
-  <%= button_to "Destroy this client", @client, method: :delete %>
+
 </div>
