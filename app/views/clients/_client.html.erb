@@ -1,12 +1,11 @@
 <div id="<%= dom_id client %>">
-  <p>
-    <strong>Name:</strong>
-    <%= client.name %>
-  </p>
-
-  <p>
-    <strong>Age:</strong>
-    <%= client.age %>
-  </p>
-
+  <tr>
+    <th scope="row"><%= client.id %></th>
+    <td><%= client.name %></td>
+    <td><%= client.age %></td>
+    <td><%= client.movie.last %></td>
+    <td><%= link_to "Show this client", client %></td>
+    <td><%= button_to "Edit this client", edit_client_path(client) %></td>
+    <td><%= link_to "Destroy this client", @client, method: :delete %></td>
+  </tr>
 </div>

@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :set_clients, only: %i[ new edit create destroy update]
 
   # GET /movies or /movies.json
   def index
@@ -61,6 +62,10 @@ class MoviesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
       @movie = Movie.find(params[:id])
+    end
+
+    def set_clients
+      @clients = Client.all.pluck :name, :id
     end
 
     # Only allow a list of trusted parameters through.
