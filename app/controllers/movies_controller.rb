@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
   before_action :set_clients, only: %i[ new edit create destroy update]
-
+  
   # GET /movies or /movies.json
   def index
     @movies = Movie.all.reverse #Mostrará las pelis más reciente editadas primero
@@ -19,6 +19,11 @@ class MoviesController < ApplicationController
 
   # GET /movies/1/edit
   def edit
+    @movie = Movie.find(params[:id])
+    @clients = Client.all.pluck(:name, :id)
+    @numerador = @movie.client_id
+    @picture_a = @movie.picture
+    @moviegatekeep = true
   end
 
   # POST /movies or /movies.json
@@ -27,7 +32,7 @@ class MoviesController < ApplicationController
 
     respond_to do |format|
       if @movie.save
-        format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
+        format.html { redirect_to movies_path, notice: "Movie was successfully created." }
         format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +45,7 @@ class MoviesController < ApplicationController
   def update
     respond_to do |format|
       if @movie.update(movie_params)
-        format.html { redirect_to movie_url(@movie), notice: "Movie was successfully updated." }
+        format.html { redirect_to movies_path, notice: "Movie was successfully updated." }
         format.json { render :show, status: :ok, location: @movie }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -68,6 +73,7 @@ class MoviesController < ApplicationController
     def set_clients
       @clients = Client.all.pluck(:name, :id)
     end
+
 
     # Only allow a list of trusted parameters through.
     def movie_params

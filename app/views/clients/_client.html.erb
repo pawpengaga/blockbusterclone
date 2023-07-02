@@ -10,12 +10,16 @@
       <% else %>
         <td>No arrienda</td>
       <% end %>
-
         <td><%= link_to "Show this client", client %></td>
-      <%else%>
-      <td><%= link_to client.movies.last, movie_path(client.movies.last) %></td>
+    <%else%>
+      <% if client.movies.last %>
+        <td><%= link_to client.movies.last, movie_path(client.movies.last) %></td>
+      <% else %>
+        <td>No arrienda</td>
+      <% end %>
     <%end%>
-    <td><%= button_to "Edit this client", edit_client_path(client) %></td>
-    <td><%= link_to "Destroy this client", @client, method: :delete %></td>
+    <td><%= link_to "Edit this client", edit_client_path(client) %></td>
+    <td><%= button_to "Destroy this client", client, method: :delete %></td>
   </tr>
 </div>
+

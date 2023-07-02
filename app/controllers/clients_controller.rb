@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
 
   # GET /clients or /clients.json
   def index
-    @clients = Client.all
+    @clients = Client.all.reverse
     @counter = Client.count
   end
 
@@ -14,7 +14,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/new
   def new
-    @clients = Client.new
+    @client = Client.new
   end
 
   # GET /clients/1/edit
@@ -27,7 +27,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to client_url(@client), notice: "Client was successfully created." }
+        format.html { redirect_to clients_path, notice: "Client was successfully created." }
         format.json { render :show, status: :created, location: @client }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class ClientsController < ApplicationController
   def update
     respond_to do |format|
       if @client.update(client_params)
-        format.html { redirect_to client_url(@client), notice: "Client was successfully updated." }
+        format.html { redirect_to clients_path, notice: "Client was successfully updated." }
         format.json { render :show, status: :ok, location: @client }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,8 @@ class ClientsController < ApplicationController
 
   # DELETE /clients/1 or /clients/1.json
   def destroy
-    @client.destroy
+    @client.movies.delete_all #Elimina la relación con la pelicula y al cliente
+    @client.destroy #Elimina todo todillo
 
     respond_to do |format|
       format.html { redirect_to clients_url, notice: "Client was successfully destroyed." }

@@ -18,13 +18,20 @@
 
   <div>
     <%= form.label :client_id, "Cliente", style: "display: block" %>
-    <%= form.select :client_id, options_for_select([nil] + @clients) %>
+    <%= form.select :client_id, options_for_select([nil] + @clients, @numerador) %>
   </div>
   
+  <% if @moviegatekeep%>
   <div>
     <%= form.label :picture, "Portada de la película (URL)", style: "display: block" %>
-    <%= form.text_field :picture %>
+    <%= form.text_field :picture, value: @picture_a %>
   </div>
+  <%else%>
+  <div>
+    <%= form.label :picture, "Portada de la película (URL)", style: "display: block" %>
+    <%= form.text_field :picture, value: "https://www.mockofun.com/wp-content/uploads/2019/10/movie-poster-credits-178.jpg"%>
+  </div>
+  <%end%>
 
   <div>
     <%= form.submit %>
