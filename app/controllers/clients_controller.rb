@@ -9,20 +9,24 @@ class ClientsController < ApplicationController
     if params[:query_text].present?
       @pagy, @clients = pagy(Client.search_full_text(params[:query_text]))
     end
+    render layout: 'clients'
   end
 
   # GET /clients/1 or /clients/1.json
   def show
     @counter = 1
+    render layout: 'clients'
   end
 
   # GET /clients/new
   def new
     @client = Client.new
+    render layout: 'clients'
   end
 
   # GET /clients/1/edit
   def edit
+    render layout: 'clients'
   end
 
   # POST /clients or /clients.json
@@ -31,7 +35,7 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
-        format.html { redirect_to clients_path, notice: "Client was successfully created." }
+        format.html { redirect_to client_url(@client), notice: "Cliente creado exitosamente :)" }
         format.json { render :show, status: :created, location: @client }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +48,7 @@ class ClientsController < ApplicationController
   def update
     respond_to do |format|
       if @client.update(client_params)
-        format.html { redirect_to clients_path, notice: "Client was successfully updated." }
+        format.html { redirect_to client_url(@client), notice: "Cliente actualizado con éxito :)" }
         format.json { render :show, status: :ok, location: @client }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,7 +63,7 @@ class ClientsController < ApplicationController
     @client.destroy #Elimina todo todillo
 
     respond_to do |format|
-      format.html { redirect_to clients_url, notice: "Client was successfully destroyed." }
+      format.html { redirect_to clients_url, notice: "Cliente eliminado exitosamente." }
       format.json { head :no_content }
     end
   end

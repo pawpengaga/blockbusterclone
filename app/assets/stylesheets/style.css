@@ -21,16 +21,17 @@ body{
 a{
     color: var(--yellow);
 }
+
 a:hover{
     color: var(--orange);
 }
 
 .able{
-    color: rgb(0, 186, 124);
+    color: rgb(0, 186, 25);
 }
 
 .disablee{
-    color: rgb(248, 43, 54);
+    color: rgb(126, 24, 29);
 }
 
 .mysearch{
@@ -72,9 +73,8 @@ a:hover{
 }
 
 .disabled>.page-link{
-    color: white;
-    background-color: var(--yellow);
-    border-color: var(--yellow);
+    color: var(--yellow);
+    background-color: white;
 }
 
 .active>.page-link{
@@ -88,4 +88,8 @@ a:hover{
     text-decoration: none;
 }
 
+.myactive{
+    background-color: orange;
+}
 /****EMOJIS DE CALAVERA*****/
+

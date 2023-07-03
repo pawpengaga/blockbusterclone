@@ -8,18 +8,22 @@
       <% if client.movies.present? %>
         <td><%= link_to client.movies.last.name, movie_path(client.movies.last) %></td>
       <% else %>
-        <td>No arrienda</td>
+        <td><span class="disablee">No arrienda</span></td>
       <% end %>
-        <td><%= link_to "Show this client", client %></td>
+        <td><%= link_to "Ver cliente", client %></td>
     <%else%>
       <% if client.movies.last %>
         <td><%= link_to client.movies.last.name, movie_path(client.movies.last) %></td> <!--WHY THO-->
       <% else %>
-        <td>No arrienda</td>
+        <td><span class="disablee">No arrienda</span></td>
       <% end %>
     <%end%>
-    <td><%= link_to "Edit this client", edit_client_path(client) %></td>
-    <td><%= button_to "Destroy this client", client, method: :delete %></td>
+    <td><%= link_to "Editar", edit_client_path(client) %></td>
+    <td class="text-center">
+      <%= button_to client_path(client), method: :delete, class: "btn yellowbtn btn-light", data: { bs_toggle: "tooltip", bs_placement: "right", bs_title: "Si elimina el cliente, las películas serán desvinculadas de forma automática" } do %>
+        Eliminar cliente
+      <% end %>
+    </td>
   </tr>
 </div>
 

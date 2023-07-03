@@ -11,17 +11,19 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :age, style: "display: block" %>
-    <%= form.text_field :age %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="row d-flex justify-content-center">
+    <div class="col-5">
+      <div class="mb-4">
+        <%= form.label :name, "Nombre", style: "display: block", class: "fw-600 mb-2" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+      <div class="mb-4">
+        <%= form.label :age, "Edad", style: "display: block", class: "fw-600 mb-2" %>
+        <%= form.text_field :age, class: "form-control" %>
+      </div>
+      <div class="text-center">
+        <%= form.submit "Publicar", class: "yellowbtn btn btn-ligh w-100 mt-4 fs-5 fw-600 py-2" %>
+      </div>
+    </div>
   </div>
 <% end %>

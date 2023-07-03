@@ -1,10 +1,11 @@
-<h1>Editing client</h1>
+<h3 class="fw-600 text-center my-3">Editar datos de cliente</h3>
 
 <%= render "form", client: @client %>
 
-<br>
 
-<div>
-  <%= link_to "Show this client", @client %> |
-  <%= link_to "Back to clients", clients_path %>
+<div class="row d-flex justify-content-center mt-3 the-cheapest">
+  <div class="col-5 text-center">
+      <%= link_to "Atrás", @client, class: "yellowbtn btn btn-light mb-3 d-block-inline w-75" %>
+      <%= link_to "Volver a inicio", clients_path, class: "yellowbtn btn btn-light mb-3 d-block-inline w-75" %>
+  </div>
 </div>

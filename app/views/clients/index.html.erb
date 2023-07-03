@@ -1,12 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Clients</h1>
-<div id="clients">
-  <%= form_with url: clients_path, method: :get do |form|%>
-  <%= form.text_field :query_text, placeholder: "Buscar clientes", value: params[:query_text], class: "form-control custom-search"%>
-<%end%>
-<%==raw pagy_bootstrap_nav(@pagy) %>
-  <table class="table table-bordered">
+<div class="row p-0 m-0">
+  <div class="col-8 p-0">
+    <h3 class="fw-600">Nuestros clientes</h3>
+  </div>
+  <div id="clients" class="col-4 p-0">
+    <%= form_with url: clients_path, method: :get do |form|%>
+    <%= form.text_field :query_text, placeholder: "Buscar clientes", value: params[:query_text], class: "form-control custom-search"%>
+  <%end%>
+</div>
+<div class="row p-0 m-0">
+  
+  <div class="col-4 mt-3 p-0">
+    <div class="fs-4 mb-4 btn yellowbtn py-2"><i class="fa-solid fa-circle-plus text-white"></i><%= link_to "Nuevo cliente", new_client_path, class:"fw-500 ms-2 text-decoration-none text-white" %></div>
+  </div>
+  <div class="col-8 p-0 d-flex justify-content-end mt-3"> <%==raw pagy_bootstrap_nav(@pagy) %></div>
+</div>
+  <table class="table table-stripped table-hover table-bordered table align-middle">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -23,4 +33,6 @@
     </tbody>
   </table>
 </div>
-<%= link_to "New client", new_client_path %>
+<div class="w-100 d-flex justify-content-end mt-3"><%==raw pagy_bootstrap_nav(@pagy) %></div>
+
+

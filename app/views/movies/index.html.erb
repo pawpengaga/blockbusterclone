@@ -18,9 +18,9 @@
             <h5 class="card-title text-center fs-4 mt-3"><%= movie.name %></h5>
             <hr>
             <% if movie.client %>
-              <p class="text-center m-0 fs-5">Arrendada por: <%= movie.client.name %></p>
+              <p class="text-center m-0 fs-5"><span class="fw-500">Arrendada por:</span> <%= link_to movie.client.name, client_path(movie.client) %></p>
             <% else %>
-              <p class="text-center m-0 fs-5"><span class="fw-500">Estado:</span> Disponible</p>
+              <p class="text-center m-0 fs-5"><span class="fw-500">Estado:</span> <span class="able">Disponible</span></p>
             <% end %>
             <%= link_to "Ver detalles", movie, class: "yellowbtn btn btn-light mt-3 w-100" %>
           </div>
