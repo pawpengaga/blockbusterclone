@@ -3,6 +3,10 @@
 <div class="container">
   <h1>Movies</h1>
   <%= link_to "New movie", new_movie_path %>
+
+  <%= form_with url: movies_path, method: :get do |form|%>
+    <%= form.text_field :query_text, placeholder: "Buscar pelis", value: params[:query_text], class: "form-control custom-search"%>
+  <%end%>
   <div id="movies">
     <div class="row">
       <% @movies.each do |movie| %>

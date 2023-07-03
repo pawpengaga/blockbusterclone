@@ -5,9 +5,9 @@ class MoviesController < ApplicationController
   # GET /movies or /movies.json
   def index
     @movies = Movie.all.reverse
-    
+  
     if params[:query_text].present?
-      @movies = @movies.search_full_text(params[:query_text])
+      @movies = Movie.search_full_text(params[:query_text])
     end
   end
 
