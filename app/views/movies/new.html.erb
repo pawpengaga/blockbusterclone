@@ -1,9 +1,11 @@
-<h3 class="fw-700">Crear Película</h3>
+<h3 class="fw-600 text-center my-3">Crear Película</h3>
 
 <%= render "form", movie: @movie %>
 
 <br>
 
-<div class="text-end">
-  <%= link_to "Volver a inicio", movies_path %>
+<div class="row d-flex justify-content-center the-cheapest">
+  <div class="col-5 text-center">
+      <%= link_to "Volver a inicio", movies_path, class: "yellowbtn btn btn-light mb-3 d-block-inline w-75" %>
+  </div>
 </div>

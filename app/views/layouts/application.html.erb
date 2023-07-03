@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,28 +15,25 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div class="w-100 d-flex justify-content-center my-4">
+  <body class="bg-light">
+    <div class="w-100 d-flex justify-content-center py-4 container-fluid mybanner">
       <%= link_to root_path, class: "d-flex justify-content-center" do %>
       <%= image_tag "logo.png", class: "custom-pic" %>
       <% end %>
     </div>
 
-      <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid py-3">
+      <nav class="navbar navbar-expand-lg mynav">
+        <div class="container-fluid py-2">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
             <ul class="navbar-nav ms-5 fs-3 fw-700">
               <li class="nav-item me-4">
-                <%= link_to "Inicio", root_path, class: "nav-link" %>
+                <%= link_to "Películas", movies_path, class: "nav-link text-white" %>
               </li>
               <li class="nav-item me-4">
-                <%= link_to "Películas", movies_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item me-4">
-                <%= link_to "Clientes", clients_path, class: "nav-link" %>
+                <%= link_to "Clientes", clients_path, class: "nav-link text-white" %>
               </li>
               <!-- <li class="nav-item me-4">
                 <%= link_to "GitHub", "https://github.com/kotoykm", class: "nav-link " %>
@@ -44,8 +42,8 @@
           </div>
         </div>
       </nav>
-    <div class="container py-3">
-      <%= yield %>
+    <div class="container-fluid py-3">
+      <div class="container"><%= yield %></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

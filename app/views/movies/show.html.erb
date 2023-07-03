@@ -1,22 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-  <div class="col-4 py-2">
-    <div class="card">
-      <div class="card-body">
-        <%= image_tag @movie.picture, class: "w-100" %>
-        <h5 class="card-title"><%= @movie.name %></h5>
-        <% if @movie.client %>
-          <p><span class="fw-bold">Arrendada por: </span><%= link_to @movie.client.name, client_path(@movie.client) %></p>
-        <% else %>
-          <p><span class="fw-bold">Estado: </span>Disponible</p>
-        <% end %>
+  <div class="row">
+    <div class="col-4"></div>
+
+    <div class="col-4 the-cheapest">
+      <div class="card">
+        <div class="card-body">
+          <%= image_tag @movie.picture, class: "w-100" %>
+          <hr>
+          <h5 class="card-title text-center fs-4 mt-3"><%= @movie.name %></h5>
+        </div>
       </div>
     </div>
+    <div class="col-3 text-end">
+      <div class="mb-5">
+        <% if @movie.client %>
+          <p class="text-center m-0 fs-5">Arrendada por: <%= link_to @movie.client.name, client_path(@movie.client) %></p>
+        <% else %>
+          <p class="text-center m-0 fs-5"><span class="fw-500">Estado: </span><span class="able">Disponible</span></p>
+        <% end %>
+      </div>
+      <%= link_to "Editar película", edit_movie_path(@movie), class: "yellowbtn btn btn-light mb-3 d-block-inline w-75" %>
+      <%= button_to "Eliminar película", @movie, method: :delete, class: "yellowbtn btn btn-light mb-3 d-block-inline w-75" %>
+      <%= link_to "Volver", movies_path , class: "yellowbtn btn btn-light mb-3 d-block-inline w-75"%>
+    </div>
+    
   </div>
-
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
-</div>

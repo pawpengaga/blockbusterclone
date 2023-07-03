@@ -1,7 +1,91 @@
+:root{
+    --blue: rgb(3, 1, 100);
+    --orange: rgb(241,156,10);
+    --yellow: rgb(247, 189, 31);
+    --black: rgb(21,21,24);
+}
+
 body{
     font-family: 'Poppins', sans-serif;
+}
+
+.mybanner{
+    background-color: var(--blue);
 }
 
 .custom-pic {
     width: 40%;
 }
+
+
+a{
+    color: var(--yellow);
+}
+a:hover{
+    color: var(--orange);
+}
+
+.able{
+    color: rgb(0, 186, 124);
+}
+
+.disablee{
+    color: rgb(248, 43, 54);
+}
+
+.mysearch{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 75%;
+}
+
+/*mycustommenu*/
+
+.mynav{
+    background-color: var(--yellow);
+    text-decoration: none;
+}
+
+.plusicon{
+    color: var(--yellow);
+}
+/*********BOTONES**********/
+
+.yellowbtn{
+    background-color: var(--yellow);
+    color: white;
+    border-color: var(--yellow);
+}
+
+.yellowbtn:hover{
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+/*PAGY STYLE*/
+
+.page-link{
+    color: var(--blue);
+    background-color: white;
+}
+
+.disabled>.page-link{
+    color: white;
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.active>.page-link{
+    background-color: var(--yellow);
+    border-color: rgb(245, 203, 16);
+
+}
+
+.page-link:hover{
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+/****EMOJIS DE CALAVERA*****/
