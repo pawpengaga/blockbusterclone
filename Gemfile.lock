@@ -129,7 +129,10 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.2-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.15.2-x86_64-linux)
+      racc (~> 1.4)
     pagy (6.0.4)
+    pg (1.5.3)
     pg (1.5.3-x64-mingw-ucrt)
     pg_search (2.3.6)
       activerecord (>= 5.2)
@@ -217,6 +220,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
