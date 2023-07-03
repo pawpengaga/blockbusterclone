@@ -13,7 +13,7 @@
         <td><%= link_to "Show this client", client %></td>
     <%else%>
       <% if client.movies.last %>
-        <td><%= link_to client.movies.last, movie_path(client.movies.last) %></td>
+        <td><%= link_to client.movies.last.name, movie_path(client.movies.last) %></td> <!--WHY THO-->
       <% else %>
         <td>No arrienda</td>
       <% end %>

@@ -13,27 +13,27 @@
 
   <div>
     <%= form.label :name, "Nombre", style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :client_id, "Cliente", style: "display: block" %>
-    <%= form.select :client_id, options_for_select([nil] + @clients, @numerador) %>
+    <%= form.select :client_id, options_for_select([nil] + @clients, @numerador), { }, class: "form-select" %>
   </div>
   
   <% if @moviegatekeep%>
   <div>
     <%= form.label :picture, "Portada de la película (URL)", style: "display: block" %>
-    <%= form.text_field :picture, value: @picture_a %>
+    <%= form.text_field :picture, value: @picture_a, class: "form-control"%>
   </div>
   <%else%>
   <div>
     <%= form.label :picture, "Portada de la película (URL)", style: "display: block" %>
-    <%= form.text_field :picture, value: "https://www.mockofun.com/wp-content/uploads/2019/10/movie-poster-credits-178.jpg"%>
+    <%= form.text_field :picture, value: "https://www.mockofun.com/wp-content/uploads/2019/10/movie-poster-credits-178.jpg", class: "form-control"%>
   </div>
   <%end%>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit%>
   </div>
 <% end %>

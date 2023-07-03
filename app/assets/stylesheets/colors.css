@@ -1,0 +1,130 @@
+:root{
+    /*PALETTE 1*/
+    --snow: #F8F8F5;
+    --mint: #37C6AF;
+    --orchid:#856CD1;
+    --cobalt: #5092DD;
+    --violet: #6244C6;
+
+    /*Bootstrap Basics*/
+    --blue:    #0d6efd;
+    --indigo:  #6610f2;
+    --purple:  #6f42c1;
+    --pink:    #d63384;
+    --red:     #dc3545;
+    --orange:  #fd7e14;
+    --yellow:  #ffc107;
+    --green:   #198754;
+    --teal:    #20c997;
+    --cyan:    #0dcaf0;
+}
+
+/*PALETTE 1*/
+.text-snow{
+    color: var(--snow);
+}
+.bg-snow{
+    background-color: var(--snow);
+}
+/**/
+.text-mint{
+    color: var(--mint);
+}
+.bg-mint{
+    background-color: var(--mint);
+}
+/**/
+.text-orchid{
+    color: var(--orchid);
+}
+.bg-orchid{
+    background-color: var(--orchid);
+}
+/**/
+.text-cobalt{
+    color: var(--cobalt);
+}
+.bg-cobalt{
+    background-color: var(--cobalt);
+}
+/**/
+.text-violet{
+    color: var(--violet);
+}
+.bg-violet{
+    background-color: var(--violet);
+}
+
+/************************/
+
+/*BOOTSTRAP BASICS*/
+
+.text-blue{
+    color: var(--blue);
+}
+.bg-blue{
+    background-color: var(--blue);
+}
+/**/
+.text-indigo{
+    color: var(--indigo);
+}
+.bg-indigo{
+    background-color: var(--indigo);
+}
+/**/
+.text-purple{
+    color: var(--purple);
+}
+.bg-purple{
+    background-color: var(--purple);
+}
+/**/
+.text-pink{
+    color: var(--pink);
+}
+.bg-pink{
+    background-color: var(--pink);
+}
+/**/
+.text-red{
+    color: var(--red);
+}
+.bg-red{
+    background-color: var(--red);
+}
+/**/
+.text-orange{
+    color: var(--orange);
+}
+.bg-orange{
+    background-color: var(--orange);
+}
+/**/
+.text-yellow{
+    color: var(--yellow);
+}
+.bg-yellow{
+    background-color: var(--yellow);
+}
+/**/
+.text-green{
+    color: var(--green);
+}
+.bg-green{
+    background-color: var(--green);
+}
+/**/
+.text-teal{
+    color: var(--teal);
+}
+.bg-teal{
+    background-color: var(--teal);
+}
+/**/
+.text-cyan{
+    color: var(--cyan);
+}
+.bg-cyan{
+    background-color: var(--cyan);
+}
