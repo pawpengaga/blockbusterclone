@@ -3,8 +3,12 @@ class ClientsController < ApplicationController
 
   # GET /clients or /clients.json
   def index
-    @clients = Client.all.reverse
     @counter = Client.count
+    @pagy, @clients = pagy(Client.all.order(id: :desc))
+  
+    if params[:query_text].present?
+      @pagy, @clients = pagy(Client.search_full_text(params[:query_text]))
+    end
   end
 
   # GET /clients/1 or /clients/1.json

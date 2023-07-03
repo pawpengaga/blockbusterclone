@@ -2,6 +2,10 @@
 
 <h1>Clients</h1>
 <div id="clients">
+  <%= form_with url: clients_path, method: :get do |form|%>
+  <%= form.text_field :query_text, placeholder: "Buscar clientes", value: params[:query_text], class: "form-control custom-search"%>
+<%end%>
+<%==raw pagy_bootstrap_nav(@pagy) %>
   <table class="table table-bordered">
     <thead>
       <tr>
