@@ -28,12 +28,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
-            <ul class="navbar-nav fs-3 fw-700">
-              <li class="nav-item">
-                <%= link_to "Películas", movies_path, class: "nav-link text-white py-3 px-5 myactive" %>
+            <ul class="navbar-nav fs-3 fw-700" data-controller="headertoggler">
+              <li class="nav-item" data-action="click->headertoggler#changeColor">
+                <span data-headertoggler-target="text"><%= link_to "Películas", movies_path, class: "nav-link text-white py-3 px-5 #{'myactive' if current_page?(movies_path)}" %></span>
               </li>
-              <li class="nav-item">
-                <%= link_to "Clientes", clients_path, class: "nav-link text-white py-3 px-5" %>
+              <li class="nav-item" data-action="click->headertoggler#changeColor">
+                <span data-headertoggler-target="text"><%= link_to "Clientes", clients_path, class: "nav-link text-white py-3 px-5 #{'myactive' if current_page?(clients_path)}" %></span>
               </li>
               <!-- <li class="nav-item me-4">
                 <%= link_to "GitHub", "https://github.com/kotoykm", class: "nav-link " %>
@@ -46,8 +46,10 @@
       <div class="container"><%= yield %></div>
     </div>
 
-    <%= javascript_include_tag "myapp.js" %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    <%= javascript_include_tag "tooltipinit.js" %>
+    <%= javascript_include_tag "app.js" %> 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.7/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

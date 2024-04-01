@@ -5,28 +5,28 @@ class ClientsController < ApplicationController
   def index
     @counter = Client.count
     @pagy, @clients = pagy(Client.all.order(id: :desc))
-  
+
     if params[:query_text].present?
       @pagy, @clients = pagy(Client.search_full_text(params[:query_text]))
     end
-    render layout: 'clients'
+    #render layout: 'clients'
   end
 
   # GET /clients/1 or /clients/1.json
   def show
     @counter = 1
-    render layout: 'clients'
+    #render layout: 'clients'
   end
 
   # GET /clients/new
   def new
     @client = Client.new
-    render layout: 'clients'
+    #render layout: 'clients'
   end
 
   # GET /clients/1/edit
   def edit
-    render layout: 'clients'
+    #render layout: 'clients'
   end
 
   # POST /clients or /clients.json

@@ -1,0 +1,7 @@
+LISTA DE COSAS QUE SE PUEDEN HACER AHORA QUE SE MAS COSAS:
+    - Poner lógica de eventos con javascript
+        - Hacer la sección de películas y la de usuarios tengan un estilo distinto
+        - Añadir algún tipo de efecto por clic o por hover a las pelis
+        - etc según se me ocurra
+    - Generar de mejor manera el seed
+    - Mejorar los estilos (Opcional)

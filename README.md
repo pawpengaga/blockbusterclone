@@ -1,24 +1,26 @@
-# README
+# Blockbuster Clone 🎞️🍿 (UPDATED)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+One of my first projects. It has 3 quircks
 
-Things you may want to cover:
+- Pagination feature
+- Search feature
+- The seed its recieves data via API conection. This is possible thanks to a library of my creation.
 
-* Ruby version
+## Instalation instructions 💿
 
-* System dependencies
+This is pretty standard
 
-* Configuration
+- Install dependencies
+```
+bundle install
+```
 
-* Database creation
+- run server
+```
+rails s
+```
 
-* Database initialization
+## Requirements 💎
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Postgresql
+- Ruby 3.1.3

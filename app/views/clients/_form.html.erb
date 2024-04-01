@@ -19,7 +19,7 @@
       </div>
       <div class="mb-4">
         <%= form.label :age, "Edad", style: "display: block", class: "fw-600 mb-2" %>
-        <%= form.text_field :age, class: "form-control" %>
+        <%= form.number_field :age, class: "form-control", max: 130 %>
       </div>
       <div class="text-center">
         <%= form.submit "Publicar", class: "yellowbtn btn btn-ligh w-100 mt-4 fs-5 fw-600 py-2" %>
