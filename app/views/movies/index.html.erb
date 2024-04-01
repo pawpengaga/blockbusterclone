@@ -17,8 +17,8 @@
             <%= image_tag movie.picture, class: "w-100" %>
             <h5 class="card-title text-center fs-4 mt-3"><%= movie.name %></h5>
             <hr>
-            <% if movie.client %>
-              <p class="text-center m-0 fs-5"><span class="fw-500">Arrendada por:</span> <%= link_to movie.client.name, client_path(movie.client) %></p>
+            <% if movie.customer %>
+              <p class="text-center m-0 fs-5"><span class="fw-500">Arrendada por:</span> <%= link_to movie.customer.name, customer_path(movie.customer) %></p>
             <% else %>
               <p class="text-center m-0 fs-5"><span class="fw-500">Estado:</span> <span class="able">Disponible</span></p>
             <% end %>

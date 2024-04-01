@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  belongs_to :client, optional: true #Quita el not null
+  belongs_to :customer, optional: true #Quita el not null
 
   include PgSearch::Model #Hace una serie de selects muy sofisticados en la base de datos
 
@@ -7,7 +7,7 @@ class Movie < ApplicationRecord
       name: 'A'
   },
   associated_against:{
-    client: [:name]
+    customer: [:name]
   },
   using: {
       tsearch: {

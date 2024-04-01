@@ -18,7 +18,7 @@ end
 print movies_data
 
 10.times do
-  Client.create(name: Faker::Name.name, age: Faker::Number.between(from: 18, to: 100))
+  Customer.create(name: Faker::Name.name, age: Faker::Number.between(from: 18, to: 100))
 end
 
 movies_processed.each do |movie|

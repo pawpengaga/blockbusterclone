@@ -1,4 +1,4 @@
-class Client < ApplicationRecord
+class Customer < ApplicationRecord
     has_many :movies
     include PgSearch::Model
 

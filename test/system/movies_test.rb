@@ -14,7 +14,7 @@ class MoviesTest < ApplicationSystemTestCase
     visit movies_url
     click_on "New movie"
 
-    fill_in "Client", with: @movie.client_id
+    fill_in "Customer", with: @movie.customer_id
     fill_in "Name", with: @movie.name
     click_on "Create Movie"
 
@@ -26,7 +26,7 @@ class MoviesTest < ApplicationSystemTestCase
     visit movie_url(@movie)
     click_on "Edit this movie", match: :first
 
-    fill_in "Client", with: @movie.client_id
+    fill_in "Customer", with: @movie.customer_id
     fill_in "Name", with: @movie.name
     click_on "Update Movie"
 

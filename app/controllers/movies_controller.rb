@@ -1,11 +1,11 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
-  before_action :set_clients, only: %i[ new edit create destroy update]
-  
+  before_action :set_customers, only: %i[ new edit create destroy update]
+
   # GET /movies or /movies.json
   def index
     @pagy, @movies = pagy(Movie.all.order(id: :desc))
-  
+
     if params[:query_text].present?
       @pagy, @movies = pagy(Movie.search_full_text(params[:query_text]))
     end
@@ -27,8 +27,8 @@ class MoviesController < ApplicationController
   # GET /movies/1/edit
   def edit
     @movie = Movie.find(params[:id])
-    @clients = Client.all.pluck(:name, :id)
-    @numerador = @movie.client_id
+    @customers = Customer.all.pluck(:name, :id)
+    @numerador = @movie.customer_id
     @picture_a = @movie.picture
     @moviegatekeep = true
   end
@@ -74,16 +74,16 @@ class MoviesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
-      @movie = Movie.find(params[:id]) #Movie.includes(:client).find(params[:id])
+      @movie = Movie.find(params[:id]) #Movie.includes(:customer).find(params[:id])
     end
 
-    def set_clients
-      @clients = Client.all.pluck(:name, :id)
+    def set_customers
+      @customers = Customer.all.pluck(:name, :id)
     end
 
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:name, :client_id, :picture)
+      params.require(:movie).permit(:name, :customer_id, :picture)
     end
 end

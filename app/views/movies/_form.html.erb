@@ -18,9 +18,9 @@
         <%= form.text_field :name, class: "form-control" %>
       </div>
       <div class="mb-4">
-        <%= form.label :client_id, "Cliente", style: "display: block", class: "fw-600 mb-2" %>
+        <%= form.label :customer_id, "Cliente", style: "display: block", class: "fw-600 mb-2" %>
         <!-- FORMA MEJORADA QUE DEBE USARSE A PARTIR DE AHORA -->
-        <%= form.select :client_id, options_for_select([["Disponible", nil]] + Client.all.collect {|u| [u.name, u.id]}), {}, { class: "form-select" } %>
+        <%= form.select :customer_id, options_for_select([["Disponible", nil]] + Customer.all.collect {|u| [u.name, u.id]}), {}, { class: "form-select" } %>
       </div>
       
       <% if @moviegatekeep%>

@@ -1,0 +1,11 @@
+<h3 class="fw-600 text-center my-3">Editar datos de cliente</h3>
+
+<%= render "form", customer: @customer %>
+
+
+<div class="row d-flex justify-content-center mt-3 the-cheapest">
+  <div class="col-5 text-center">
+      <%= link_to "Atrás", @customer, class: "yellowbtn btn btn-light mb-3 d-block-inline w-75" %>
+      <%= link_to "Volver a inicio", customers_path, class: "yellowbtn btn btn-light mb-3 d-block-inline w-75" %>
+  </div>
+</div>

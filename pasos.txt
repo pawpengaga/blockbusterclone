@@ -1,4 +1,4 @@
-rails g scaffold client name age:integer
-rails g scaffold movie name client:references
+rails g scaffold customer name age:integer
+rails g scaffold movie name customer:references
 
 rails db:create db:migrate

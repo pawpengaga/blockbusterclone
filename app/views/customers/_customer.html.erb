@@ -1,0 +1,29 @@
+<div id="<%= dom_id customer %>">
+  <tr>
+    <th scope="row"><%= customer.id %></th>
+    <td><%= customer.name %></td>
+    <td><%= customer.age %></td>
+    
+    <% if @counter != 1 %>
+      <% if customer.movies.present? %>
+        <td><%= link_to customer.movies.last.name, movie_path(customer.movies.last) %></td>
+      <% else %>
+        <td><span class="disablee">No arrienda</span></td>
+      <% end %>
+        <td><%= link_to "Ver cliente", customer %></td>
+    <%else%>
+      <% if customer.movies.last %>
+        <td><%= link_to customer.movies.last.name, movie_path(customer.movies.last) %></td> <!--WHY THO-->
+      <% else %>
+        <td><span class="disablee">No arrienda</span></td>
+      <% end %>
+    <%end%>
+    <td><%= link_to "Editar", edit_customer_path(customer) %></td>
+    <td class="text-center">
+      <%= button_to customer_path(customer), method: :delete, class: "btn yellowbtn btn-light", data: { bs_toggle: "tooltip", bs_placement: "right", bs_title: "Si elimina el cliente, las películas serán desvinculadas de forma automática" } do %>
+        Eliminar cliente
+      <% end %>
+    </td>
+  </tr>
+</div>
+

@@ -5,3 +5,5 @@ LISTA DE COSAS QUE SE PUEDEN HACER AHORA QUE SE MAS COSAS:
         - etc según se me ocurra
     - Generar de mejor manera el seed
     - Mejorar los estilos (Opcional)
+
+    - Cambiar el nombre del controlador a customer

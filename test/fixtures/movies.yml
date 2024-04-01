@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  client: one
+  customer: one
 
 two:
   name: MyString
-  client: two
+  customer: two

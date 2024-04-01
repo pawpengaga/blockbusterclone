@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :movies do
     get 'search'
   end
-  resources :clients
+  resources :customers
 
   root 'movies#index'
 end
